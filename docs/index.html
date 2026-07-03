@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drivio – Automatische Kilometererfassung</title>
+  <meta name="description" content="Drivio erfasst gefahrene Kilometer automatisch per GPS – für den Kilometer-Nachweis an die Kfz-Versicherung. Von Via Lab." />
+  <link rel="icon" type="image/png" href="drivio-icon.png" />
+  <style>
+    :root{
+      --ink:#111111;
+      --white:#ffffff;
+      --muted:#6b6b6b;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+      color:var(--ink);
+      background:linear-gradient(135deg,#F7F2EC 0%,#EDE2D6 45%,#E4DCEE 100%);
+      background-attachment:fixed;
+      min-height:100vh;
+      line-height:1.5;
+    }
+    .wrap{max-width:1040px;margin:0 auto;padding:32px 20px 64px}
+
+    /* Glas-Karte */
+    .glass{
+      background:rgba(255,255,255,0.55);
+      border:1px solid rgba(255,255,255,0.65);
+      border-radius:24px;
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+      backdrop-filter:blur(18px);
+      -webkit-backdrop-filter:blur(18px);
+    }
+
+    header{display:flex;align-items:center;gap:14px;margin-bottom:36px}
+    header img{width:52px;height:52px;border-radius:13px;box-shadow:0 4px 14px rgba(0,0,0,.18)}
+    header .name{font-size:26px;font-weight:800;letter-spacing:-.5px}
+    header .by{font-size:13px;color:var(--muted)}
+
+    .hero{text-align:center;margin-bottom:40px}
+    .hero h1{font-size:clamp(28px,5vw,46px);font-weight:800;letter-spacing:-1px;margin-bottom:14px}
+    .hero p{font-size:clamp(15px,2.4vw,19px);color:#333;max-width:640px;margin:0 auto}
+
+    /* Video */
+    .video-card{padding:16px;margin:0 auto 44px;max-width:420px}
+    video{width:100%;border-radius:16px;display:block;background:#000}
+    .video-hint{text-align:center;font-size:13px;color:var(--muted);margin-top:10px}
+
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:44px}
+    .feature{padding:20px 22px}
+    .feature .ic{font-size:26px;margin-bottom:8px}
+    .feature h3{font-size:16px;margin-bottom:4px}
+    .feature p{font-size:14px;color:#444}
+
+    /* QR */
+    .qr-section{display:flex;flex-wrap:wrap;align-items:center;gap:28px;padding:28px 30px;justify-content:center;text-align:left}
+    .qr-section img{width:160px;height:160px;background:#fff;border-radius:14px;padding:10px}
+    .qr-text h2{font-size:20px;margin-bottom:6px}
+    .qr-text p{font-size:14px;color:#444;max-width:320px}
+
+    footer{text-align:center;margin-top:48px;color:var(--muted);font-size:13px}
+    footer .logo{font-weight:700;color:var(--ink)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <img src="drivio-icon.png" alt="Drivio Icon" />
+      <div>
+        <div class="name">Drivio</div>
+        <div class="by">von Via Lab</div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <h1>Kilometer fahren.<br />Den Rest macht Drivio.</h1>
+      <p>Drivio erkennt Fahrten automatisch per GPS und erfasst die gefahrenen
+         Kilometer – für den unkomplizierten Nachweis an die Kfz-Versicherung.
+         Ganz ohne manuelles Starten und Stoppen.</p>
+    </section>
+
+    <div class="glass video-card">
+      <video controls playsinline preload="metadata">
+        <source src="drivio-demo.mp4" type="video/mp4" />
+        Dein Browser kann das Video nicht abspielen.
+      </video>
+      <div class="video-hint">▶︎ Live-Demo der App (ca. 40 Sek.)</div>
+    </div>
+
+    <section class="features">
+      <div class="glass feature">
+        <div class="ic">🛰️</div>
+        <h3>Automatische Erfassung</h3>
+        <p>Fahrtbeginn und -ende werden per GPS im Hintergrund erkannt.</p>
+      </div>
+      <div class="glass feature">
+        <div class="ic">🗺️</div>
+        <h3>Strecke auf Karte</h3>
+        <p>Jede Fahrt wird mit der gefahrenen Route gespeichert.</p>
+      </div>
+      <div class="glass feature">
+        <div class="ic">💼</div>
+        <h3>Privat &amp; Firma</h3>
+        <p>Fahrten trennen – inkl. Sachbezugrechner für Firmenwagen.</p>
+      </div>
+      <div class="glass feature">
+        <div class="ic">📄</div>
+        <h3>Export fürs Fahrtenbuch</h3>
+        <p>PDF &amp; CSV für die Versicherung – mit einem Tipp.</p>
+      </div>
+    </section>
+
+    <div class="glass qr-section">
+      <img src="drivio-qr.svg" alt="QR-Code zu Drivio" />
+      <div class="qr-text">
+        <h2>Auf dem Handy öffnen</h2>
+        <p>Scanne den QR-Code, um diese Seite und die Demo direkt auf
+           deinem Smartphone zu öffnen.</p>
+      </div>
+    </div>
+
+    <footer>
+      <p><span class="logo">Via Lab</span></p>
+      <p>© 2026 Via Lab. Alle Rechte vorbehalten.</p>
+    </footer>
+  </div>
+</body>
+</html>
